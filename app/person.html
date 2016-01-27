@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="personApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+
+	<body ng-controller="PersonController">
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<table class="table table-striped">
+						<thead>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Start Date</th>
+						</thead>
+						<tbody>
+							<tr ng-repeat="person in persons">
+								<td>{{person.id}}</td>
+								<td>{{person.name}}</td>
+								<td>{{person.startDate | date}}</td>
+							</tr>
+							
+							<tr ng-show="states.showPersonForm">
+								<td><input ng-model="person.id" type="text" placeholder="id"></td>
+								<td><input ng-model="person.name" type="text" placeholder="name"></td>
+								<td><input ng-model="person.startDate" type="text" placeholder="start date"></td>
+							
+								<td><button type="button" class="btn btn-primary" ng-click="add(person)">Add</button></td>
+								<td><button type="button" class="btn btn-default" ng-click="states.showPersonForm = false;">Cancel</button></td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<button type="button" class="btn btn-primary" ng-click="states.showPersonForm = true;">Add Person</button>
+					<br />
+					
+					<p>{{person.id}}</p>
+					<p>{{person.name}}</p>
+					<p>{{person.startDate}}</p>
+				</div>
+			</div>
+		</div>
+	
+		<script src="js/angular.min.js"></script>
+		<script src="js/jquery-2.2.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/person.js"></script>
+	
+	</body>
+</html>
