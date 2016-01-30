@@ -6,7 +6,7 @@
 	<body ng-controller="PersonController">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-8">
 					<h2 style="text-align: center">Person List</h2>
 					<table class="table table-striped table-hover table-condensed">
 						<thead>
@@ -42,22 +42,22 @@
 						<td ng-model="person.name">{{person.name}}</td>
 						<td ng-model="person.startDate">{{person.startDate | date}}</td>
 						<td>
-							<button type="button" class="btn btn-primary" ng-click="editPerson(person)">Edit</button>
-							<button type="button" class="btn btn-default" ng-click="deletePerson(person); alert('Jello World!'); reset();">Delete</button>
+							<button type="button" class="btn btn-primary" ng-click="editPerson(person)"><span class="glyphicon glyphicon-pencil"></span></button>
+							<button type="button" class="btn btn-default" ng-click="deletePerson(person)"><span class="glyphicon glyphicon-trash"></span></button>
 						</td>
 					</script>
 					
 					<script type="text/ng-template" id="edit">
 						<td><input type="text" ng-model="selected.id" value="selected.id" ></td>
 						<td><input type="text" ng-model="selected.name" value="selected.name" ></td>
-						<td><input type="text" ng-model="selected.startDate" value="" ></td>
+						<td><input type="text" ng-model="selected.startDate" value="selected.startDate" ></td>
 
 						<td>
-							<button type="button" class="btn btn-primary" ng-click="saveEdit(selected)">Save Edit</button>
-							<button type="button" class="btn btn-danger" ng-click="reset()">Cancel Edit</button>
+							<button type="button" class="btn btn-primary" ng-click="saveEdit(selected)"><span class="glyphicon glyphicon-ok"></span></button>
+							<button type="button" class="btn btn-danger" ng-click="reset()"><span class="glyphicon glyphicon-remove"></span></button>
 						</td>
 					</script>
-					
+					http://collabedit.com/ugmwk
 				</div>
 			</div>
 		</div>		
